@@ -8,14 +8,14 @@ import org.hl7.fhir.r4.model.Reference;
 import org.hl7.fhir.r4.model.Resource;
 
 
-/*
-  Sum type to properly represent the different Reference types:
-  - Literal references via a URI (not necessarily absolute) to the resource
-  - Logical references via Identifier
-  - Contained resource reference
-  This ensures a Ref instance to be in a well-defined state,
-  whereas a HAPI-FHIR Reference can in principle be empty or in a multi-state (literal and logical)
-*/
+/**
+ * Sum type to properly represent the different Reference types:
+ * - Literal references via a URI (not necessarily absolute) to the resource
+ * - Logical references via Identifier
+ * (- Contained resource reference ???)
+ * This ensures a Ref instance to be in a well-defined state,
+ * whereas a HAPI-FHIR Reference can in principle be empty or in a multi-state (literal and logical)
+ */
 public sealed interface Ref<T extends Resource> permits LiteralRef, LogicalRef //, Ref.Contained
 {
 

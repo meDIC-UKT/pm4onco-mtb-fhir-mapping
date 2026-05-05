@@ -9,16 +9,16 @@ import static ca.uhn.fhir.context.FhirContext.forR4Cached;
 
 
 /**
- * Based on principle "favour composition over inheritance":
- * Instead of representing profiled resource as an extension/specialization of the base resource,
- * Use a wrapper around the resource instance.
+ * Based on the principle "favour composition over inheritance":
+ * Instead of representing a profiled resource as an extension/specialization of the base resource,
+ * use a wrapper around the resource instance.
  * This has the advantage of hiding the mutability of HAPI-FHIR resources within
  * the immutable or at least selectively mutable wrapper object,
  * whereas mere extensions e.g. "class MyPatient extends Patient" are still mutable.
  *
  * The idea is for a class specializing Profiled<T> to form a "consistency boundary" around the wrapped resource,
- * by providing only a non-default constructor (or beteer: static factory method) to which all expected attributes
- * must be passed, so as to ensure the resource is instantiated in a constent state.
+ * by providing only a non-default constructor (or better: static factory method) to which all expected attributes
+ * must be passed, so as to ensure instantiation of the resource in a consistent state.
  * Also, the factory method would serve as an "anti-corruption layer" for the fact that HAPI-FHIR still requires 
  * client code to use the essentially obsolete java.util.Date. Instead, date/time attributes would be represented
  * with the new java.time.* components, and only converted to java.util.Date under the hood for 
