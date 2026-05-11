@@ -3,7 +3,10 @@ package de.ukt.medic.fhir.mappings.mtb;
 
 import java.util.List;
 import java.util.stream.Stream;
+import static de.ukt.medic.fhir.mappings.mtb.Examples.ADMINISTRATIVE_GENDER;
+import static de.ukt.medic.fhir.mappings.mtb.Examples.toFHIR;
 import static java.util.stream.Collectors.toList;
+import ca.uhn.fhir.context.FhirContext;
 import scala.util.Random;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,15 +16,11 @@ import de.ekut.tbi.generators.Gen;
 import de.dnpm.dip.mtb.gens.Generators$;
 import de.dnpm.dip.util.Completer;
 import de.dnpm.dip.model.Gender$;
-import de.dnpm.dip.model.Patient;
 import de.dnpm.dip.mtb.model.MTBPatientRecord;
-import de.dnpm.dip.mtb.model.MTBPatientRecord$;
 import de.dnpm.dip.mtb.model.Completers$;
-import play.api.libs.json.Json;
-import static de.ukt.medic.fhir.mappings.mtb.Mappings.*;
 
 
-class Tests
+class ExamplesTests
 {
 
   private static final Random RND = new Random();
@@ -98,12 +97,21 @@ class Tests
   }
 
 
-  @Test 
+  @Test
   public void testPatientMappingVariant1(){
 
     var patient = patientRecord.patient();
 
+    System.out.println("=== DNPM Patient ===");
+    System.out.println(patient);
+    System.out.println();
+
     var fhirPatient = toFHIR(patient);
+
+    // Using HAPI FHIR Context to print
+    FhirContext ctx = FhirContext.forR4();
+    System.out.println("=== FHIR Patient Resource ===");
+    System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(fhirPatient.resource()));
 
     // Ensure that each attribute present on the input Patient is defined on the output FHIR Patient
     assertNotNull(fhirPatient.id());
