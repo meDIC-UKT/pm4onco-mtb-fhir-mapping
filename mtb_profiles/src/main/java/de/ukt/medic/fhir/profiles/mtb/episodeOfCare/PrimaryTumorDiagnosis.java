@@ -14,8 +14,12 @@ public class PrimaryTumorDiagnosis extends Profiled<Condition> {
         super(resource, PROFILE);
     }
 
-    public static PrimaryTumorDiagnosis of() {
+    public static PrimaryTumorDiagnosis of(
+            // TODO: Add parameters
+    ) {
         var resource = new Condition();
+        // TODO: Set required fields
+
         return new PrimaryTumorDiagnosis(resource);
     }
 }

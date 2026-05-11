@@ -11,8 +11,12 @@ public class Oncotree extends Profiled<Observation> {
         super(resource, PROFILE);
     }
 
-    public static Oncotree of() {
+    public static Oncotree of(
+            // TODO: Add parameters
+    ) {
         var resource = new Observation();
+        // TODO: Set required fields
+
         return new Oncotree(resource);
     }
 }

@@ -15,8 +15,12 @@ public class Consent extends Profiled<Observation> {
         super(resource, PROFILE);
     }
 
-    public static Consent of() {
+    public static Consent of(
+            // TODO: Add parameters
+    ) {
         var resource = new Observation();
+        // TODO: Set required fields
+
         return new Consent(resource);
     }
 }

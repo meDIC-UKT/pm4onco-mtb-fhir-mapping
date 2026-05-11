@@ -11,8 +11,12 @@ public class TumorSpread extends Profiled<Observation> {
         super(resource, PROFILE);
     }
 
-    public static TumorSpread of() {
+    public static TumorSpread of(
+            // TODO: Add parameters
+    ) {
         var resource = new Observation();
+        // TODO: Set required fields
+
         return new TumorSpread(resource);
     }
 }

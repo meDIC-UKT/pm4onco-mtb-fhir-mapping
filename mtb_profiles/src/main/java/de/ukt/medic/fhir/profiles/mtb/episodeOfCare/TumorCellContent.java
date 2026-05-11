@@ -11,8 +11,12 @@ public class TumorCellContent extends Profiled<Observation> {
         super(resource, PROFILE);
     }
 
-    public static TumorCellContent of() {
+    public static TumorCellContent of(
+            // TODO: Add parameters
+    ) {
         var resource = new Observation();
+        // TODO: Set required fields
+
         return new TumorCellContent(resource);
     }
 }

@@ -14,8 +14,12 @@ public class GeneticCounselling extends Profiled<ServiceRequest> {
         super(resource, PROFILE);
     }
 
-    public static GeneticCounselling of() {
+    public static GeneticCounselling of(
+            // TODO: Add parameters
+    ) {
         var resource = new ServiceRequest();
+        // TODO: Set required fields
+
         return new GeneticCounselling(resource);
     }
 }

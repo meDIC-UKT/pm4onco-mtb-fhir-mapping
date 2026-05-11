@@ -14,8 +14,12 @@ import org.hl7.fhir.r4.model.ServiceRequest;
             super(resource, PROFILE);
         }
 
-        public static StudyEligibilityRequest of() {
+        public static StudyEligibilityRequest of(
+                // TODO: Add parameters
+        ) {
             var resource = new ServiceRequest();
+            // TODO: Set required fields
+
             return new StudyEligibilityRequest(resource);
         }
 }

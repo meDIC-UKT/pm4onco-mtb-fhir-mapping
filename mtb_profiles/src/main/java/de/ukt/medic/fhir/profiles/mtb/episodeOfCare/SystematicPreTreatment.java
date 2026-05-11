@@ -15,8 +15,12 @@ public class SystematicPreTreatment extends Profiled<Procedure> {
         super(resource, PROFILE);
     }
 
-    public static SystematicPreTreatment of() {
+    public static SystematicPreTreatment of(
+            // TODO: Add parameters
+    ) {
         var resource = new Procedure();
+        // TODO: Set required fields
+
         return new SystematicPreTreatment(resource);
     }
 }

@@ -12,8 +12,12 @@ public class HistologyEvaluation extends Profiled<ServiceRequest> {
         super(resource, PROFILE);
     }
 
-    public static HistologyEvaluation of() {
+    public static HistologyEvaluation of(
+            // TODO: Add parameters
+    ) {
         var resource = new ServiceRequest();
+        // TODO: Set required fields
+
         return new HistologyEvaluation(resource);
     }
 }

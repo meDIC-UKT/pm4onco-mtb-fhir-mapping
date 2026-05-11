@@ -11,8 +11,12 @@ public class CombinedTherapyRecommendation extends Profiled<RequestGroup> {
         super(resource, PROFILE);
     }
 
-    public static CombinedTherapyRecommendation of() {
+    public static CombinedTherapyRecommendation of(
+            // TODO: Add parameters
+    ) {
         var resource = new RequestGroup();
+        // TODO: Set required fields
+
         return new CombinedTherapyRecommendation(resource);
     }
 }

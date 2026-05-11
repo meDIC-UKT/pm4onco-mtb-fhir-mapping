@@ -14,8 +14,12 @@ public class EpisodeOfCareClinicalImpression extends Profiled<ClinicalImpression
         super(resource, PROFILE);
     }
 
-    public static EpisodeOfCareClinicalImpression of() {
+    public static EpisodeOfCareClinicalImpression of(
+            // TODO: Add parameters
+    ) {
         var resource = new ClinicalImpression();
+        // TODO: Set required fields
+
         return new EpisodeOfCareClinicalImpression(resource);
     }
 }

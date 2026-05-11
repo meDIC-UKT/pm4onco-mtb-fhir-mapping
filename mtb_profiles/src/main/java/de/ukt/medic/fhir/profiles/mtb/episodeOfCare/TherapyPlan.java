@@ -11,8 +11,12 @@ public class TherapyPlan extends Profiled<CarePlan> {
         super(resource, PROFILE);
     }
 
-    public static TherapyPlan of() {
+    public static TherapyPlan of(
+            // TODO: Add parameters
+    ) {
         var resource = new CarePlan();
+        // TODO: Set required fields
+
         return new TherapyPlan(resource);
     }
 }

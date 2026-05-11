@@ -15,8 +15,12 @@ public class StudyEligibilityStudy extends Profiled<ResearchStudy> {
         super(resource, PROFILE);
     }
 
-    public static StudyEligibilityStudy of() {
+    public static StudyEligibilityStudy of(
+            // TODO: Add parameters
+    ) {
         var resource = new ResearchStudy();
+        // TODO: Set required fields
+
         return new StudyEligibilityStudy(resource);
     }
 }

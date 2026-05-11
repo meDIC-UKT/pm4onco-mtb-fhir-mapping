@@ -11,8 +11,12 @@ public class WHOGradeZNS extends Profiled<Observation> {
         super(resource, PROFILE);
     }
 
-    public static WHOGradeZNS of() {
+    public static WHOGradeZNS of(
+            // TODO: Add parameters
+    ) {
         var resource = new Observation();
+        // TODO: Set required fields
+
         return new WHOGradeZNS(resource);
     }
 }

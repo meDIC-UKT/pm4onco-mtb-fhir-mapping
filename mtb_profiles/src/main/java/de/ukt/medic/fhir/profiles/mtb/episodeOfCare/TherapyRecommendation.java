@@ -11,8 +11,12 @@ public class TherapyRecommendation extends Profiled<MedicationRequest> {
         super(resource, PROFILE);
     }
 
-    public static TherapyRecommendation of() {
+    public static TherapyRecommendation of(
+            // TODO: Add parameters
+    ) {
         var resource = new MedicationRequest();
+        // TODO: Set required fields
+
         return new TherapyRecommendation(resource);
     }
 }
